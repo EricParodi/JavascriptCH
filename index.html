@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Tienda Online</title>
 </head>
 <body>
+
+    <header>
+        <h1>Tienda Online</h1>
+    </header>
+    <main>
+        <section>
+            <div class="contenedor-carrito">
+                <h2>carrito de compras</h2>
+                <ul id="carrito-list">
+
+                </ul>
+                <p id="total-pagar">Total a Pagar: $0</p>
+            </div>
+        </section>
+        <section>
+            <h2>Productos Disponibles</h2>
+            <div class="productos">
+                <div class="tarjetas">
+                    <img src="./img/ropa1.png" alt="">
+                    <p class="descripcion">REMERA ZIMITH BUILTA (ZH215141)</p>
+                    <p class="precio">$8.991,00 <s>$9.990,00</s></p>
+                    <button class="producto" data-nombre="remera" data-precio="8991">Comprar</button>
+                </div>
+                <div class="tarjetas">
+                    <img src="./img/ropa4.png" alt="">
+                    <p class="descripcion">JEAN PIETA WIDE LEG BLACK (PI222101)</p>
+                    <p class="precio">$16.000,00</p>
+                    <button class="producto" data-nombre="pantalon" data-precio="16000">Comprar</button>
+                </div>
+                <div class="tarjetas">
+                    <img src="./img/ropa17.png" alt="">
+                    <p class="descripcion">ZAPATILLAS CONVERSE CHUCK TAYLOR HI ALL STAR PLATAFORMA LONA NEGRA (C166582C)</p>
+                    <p class="precio">$53.999,00</p>
+                    <button class="producto" data-nombre="zapatos" data-precio="53999">Comprar</button>
+                </div>
+            </div>
+        </section>
+    </main>
     
+    <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
+
 </html>

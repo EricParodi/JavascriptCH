@@ -1,55 +1,29 @@
 let total = 0;
-const carrito = []
+const carrito = [];
 
-function agregarAlTotal(precio){
-    total += precio;
+const carritoList = document.getElementById('carrito-list');
+const totalPagar = document.getElementById('total-pagar');
+
+function agregarAlTotal(precio) {
+  total += precio;
+  totalPagar.textContent = `Total a Pagar: $${total.toLocaleString('es-ES', { minimumFractionDigits: 2 })}`;
 }
 
-function mostrarCarrito(){
-    if (carrito.length === 0){
-        alert("El carrito esta vacio.");
-    } else {
-        let carritoString = "Productos en el carrito:\n"
-        for (let i = 0; i < carrito.length; i++ ) {
-            carritoString += `${carrito[i]}\n`
-        }
-        alert(carritoString);
-    }
+function agregarAlCarrito(nombre, precio) {
+  carrito.push({ nombre, precio });
+  agregarAlTotal(precio);
+
+  const li = document.createElement('li');
+  li.textContent = `${nombre} - $${precio.toLocaleString('es-ES', { minimumFractionDigits: 2 })}`;
+  carritoList.appendChild(li);
 }
 
-while (true) {
-    const opcion = prompt(
-      "¿Qué deseas comprar? (remera, pantalón, zapatos) \nEscribe 'carrito' para ver lo que has agregado o 'salir' para terminar la compra"
-    );
-  
-    if (opcion === "salir") {
-      break;
-    } else if (opcion === "carrito") {
-      mostrarCarrito();
-    } else {
-      let precio;
-      switch (opcion) {
-        case "remera":
-          precio = 10;
-          break;
-        case "pantalon":
-          precio = 20;
-          break;
-        case "zapatos":
-          precio = 30;
-          break;
-        default:
-          alert("Ese artículo no está disponible.");
-          continue;
-      }
-      agregarAlTotal(precio);
-      carrito.push(opcion);
-      alert(`${opcion} agregado al carrito.`);
-    }
-  }
 
-if (total > 0) {
-    alert(`Total a pagar: $${total}`);
-  } else {
-    alert("No has comprado nada. ¡Hasta luego!");
-  }
+const productos = document.querySelectorAll('.producto');
+productos.forEach((producto) => {
+  producto.addEventListener('click', () => {
+    const nombre = producto.getAttribute('data-nombre');
+    const precio = parseFloat(producto.getAttribute('data-precio'));
+    agregarAlCarrito(nombre, precio);
+  });
+});
