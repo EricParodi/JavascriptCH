@@ -1,53 +1,53 @@
-body, h1, h2, ul, li{
+body, h1, h2, ul, li {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: Arial, sans-serif;
 }
 
-header{
+header {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px 0;
 }
 
-main{
+main {
     display: flex;
     justify-content: space-between;
     margin: 20px;
 }
 
-.contenedor-carrito{
+.contenedor-carrito {
     background-color: #f5f5f5;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-.contenedor-carrito h2{
+.contenedor-carrito h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-#carrito-list{
+#carrito-list {
     list-style: none;
     padding: 0;
 }
 
-#total-pagar{
+#total-pagar {
     font-weight: bold;
     margin-top: 10px;
 }
 
-.productos{
+.productos {
     display: flex;
     flex-wrap: wrap;
 }
 
-.tarjetas{
+.tarjetas {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -57,21 +57,21 @@ main{
     text-align: center;
 }
 
-.tarjetas img{
+.tarjetas img {
     max-width: 100%;
 }
 
-.descripcion{
+.descripcion {
     font-size: 1rem;
     margin: 10px 0;
 }
 
-.precio{
+.precio {
     font-size: 1.2rem;
     margin: 10px 0;
 }
 
-.producto{
+.producto {
     background-color: #333;
     color: #fff;
     border: none;
@@ -80,6 +80,20 @@ main{
     cursor: pointer;
 }
 
-.producto:hover{
+.producto:hover {
     background-color: #555;
+}
+
+#vaciar-carrito {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#vaciar-carrito:hover {
+    background-color: #cc0000;
 }
