@@ -97,3 +97,39 @@ main {
 #vaciar-carrito:hover {
     background-color: #cc0000;
 }
+
+#eliminar-producto,
+#comprar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#eliminar-producto:hover,
+#comprar:hover {
+    background-color: #45a049;
+}
+
+.carrito-item {
+    position: relative;
+    padding-right: 20px;
+}
+
+.carrito-item::before {
+    content: '✕';
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #ff0000;
+    cursor: pointer;
+}
+
+.carrito-item:hover::before {
+    color: #cc0000;
+}
